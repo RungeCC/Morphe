@@ -33,6 +33,8 @@ See `Typis.wl`.
 + better error handling and cache for multi-pages mode
 + debug mode with timer support
 + better README and a Wolfram documentation.
++ make a Paclet or ResourceFunction
++ move `Error.wl` into a seperated package
 
 ## License
 

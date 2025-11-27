@@ -138,7 +138,7 @@ RaiseConfirmNoConflictKeys[
 RaiseConfirmNoConflictKeys[
   assoc0_?AssociationQ,
   assoc_?AssociationQ
-] := RaiseConfirmNoConflictKeys[Keys@assoc0, assoc];
+] := RaiseConfirmNoConflictKeys[Keys @ assoc0, assoc];
 
 RaiseConfirmNoConflictKeys[a_] := Function[assoc, RaiseConfirmNoConflictKeys[a, assoc], {}];
 

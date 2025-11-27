@@ -296,7 +296,9 @@ Morphe[strs: {str___String}, opts: OptionsPattern[]] := Handle[_Failure] @ Block
           Last /@ SortBy[First][Join[res, cachedres]]
         ]
       ]
-    ],
+    ] (* Post-processing for image size and plot range *) \
+      /. (HoldPattern[PlotRange -> _])    :> (PlotRange -> All) \
+      /. (HoldPattern[ImageSize -> size_] :> (ImageSize -> mag * size)),
     errhandler[{
       {
         "error",
@@ -363,9 +365,6 @@ iMorpheMulti[
     FileNameJoin[{dir, name <> "-"<> ToString[#] <> ".svg"}],
     {"SVG", "Graphics"}
   ]& /@ Range[Length[fullstrs]];
-  imgs = imgs \
-    /. (HoldPattern[PlotRange -> _])    :> (PlotRange -> All) \
-    /. (HoldPattern[ImageSize -> size_] :> (ImageSize -> mag * size));
   If[caching,
     (
       Apply[(setCompCache[{#1, flags} -> #2])&]
@@ -419,9 +418,6 @@ iMorphe[
   img = ImportString[
     output, {"SVG", "Graphics"}, CharacterEncoding -> "UTF-8"
   ];
-  img = img \
-    /. (HoldPattern[PlotRange -> _])    :> (PlotRange -> All) \
-    /. (HoldPattern[ImageSize -> size_] :> (ImageSize -> mag * size));
   If[caching,
     setCompCache[{fullstr, flags} -> img];
   ];

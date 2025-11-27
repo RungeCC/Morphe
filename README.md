@@ -18,23 +18,23 @@ TODO.
 
 ## Usage
 
-See `Typis.wl`.
+See `Morphe.wl`.
 
 ## TODOs
 
-+ check arguments
-+ frontend completion supports
-+ direct output Wolfram expression into typst
-+ encoding typst types, elements in Wolfram language
-+ validate typst flags
++ [ ] check arguments
++ [ ] frontend completion supports
++ [ ] direct output Wolfram expression into typst
++ [ ] encoding typst types, elements in Wolfram language
++ [ ] validate typst flags
 + [x] cache outputs
 + [x] validate typst
 + [x] multi-pages output support
-+ better error handling and cache for multi-pages mode
-+ debug mode with timer support
-+ better README and a Wolfram documentation.
-+ make a Paclet or ResourceFunction
-+ move `Error.wl` into a seperated package
++ [ ] better error handling and cache for multi-pages mode
++ [ ] debug mode with timer support
++ [ ] better README and a Wolfram documentation.
++ [ ] make a Paclet or ResourceFunction
++ [ ] move `Error.wl` into a seperated package
 
 ## License
 
